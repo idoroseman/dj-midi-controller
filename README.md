@@ -1,7 +1,7 @@
 # dj-midi-controller
 
 this is a project to build a dj style controller for use with SDR-Console softare used by ham radio operators
-![image here](doc/isometric.png)
+![image here](doc/IMG_1016.jpg)
 ## data files
 there are three folders :
 - eagle for the pcb design
