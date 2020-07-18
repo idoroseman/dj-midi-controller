@@ -9,7 +9,7 @@ there are three folders :
 - 3d for the encloser
 
 ## sdr-console configuration
-you can open the midi settings and set each fucntion as you like, or use my presets
+you can open the midi settings and set each fucntion as you like, or use [my presets](doc/SDR-MidiDefns_000.xml)
 
 ## Button Functions
 ![image here](doc/front.png)
