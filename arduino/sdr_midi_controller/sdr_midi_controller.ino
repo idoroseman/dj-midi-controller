@@ -1,6 +1,6 @@
 #include <Encoder.h> // Include the Encoder library.
 #include <Control_Surface.h> // Include the Control Surface library
-
+   
 // Instantiate a MIDI over USB interface.
 USBMIDI_Interface midi;
 
@@ -13,13 +13,15 @@ Bank<2> bank(1); // A bank with four channels, and 2 bank settings
 Bankable::CCRotaryEncoder enc1 = { {bank, BankType::CHANGE_CHANNEL}, {A0, 14}, MCU::V_POT_1,  1, };
 CCRotaryEncoder enc2 = { {4, 3}, MCU::V_POT_2,  1, };
 CCRotaryEncoder enc3 = { {7, 6}, MCU::V_POT_3,  1, };
-CCButton button1 = { 10, {MIDI_CC::General_Purpose_Controller_1, CHANNEL_1}, };
-CCButton button2 = { 2, {MIDI_CC::General_Purpose_Controller_2, CHANNEL_1}, };
-CCButton button3 = { 5, {MIDI_CC::General_Purpose_Controller_3, CHANNEL_1}, };
-CCButton button4 = { 8, {MIDI_CC::General_Purpose_Controller_4, CHANNEL_1}, };
+CCButton button1 = { 10, {MIDI_CC::General_Purpose_Controller_1, CHANNEL_1}, }; //enc1 button
+CCButton button2 = { 2, {MIDI_CC::General_Purpose_Controller_2, CHANNEL_1}, }; // enc2 button
+CCButton button3 = { 5, {MIDI_CC::General_Purpose_Controller_3, CHANNEL_1}, }; // enc3 buttpm
+CCButton button4 = { 8, {MIDI_CC::General_Purpose_Controller_4, CHANNEL_1}, }; // tx toggle
 //CCButton button5 = { 9, {MIDI_CC::General_Purpose_Controller_5, CHANNEL_1}, };
+CCButton button6 = { 16, {MIDI_CC::General_Purpose_Controller_5, CHANNEL_1},}; // A/B rx switch
 
-SwitchSelector selector = {bank, 9};
+
+SwitchSelector selector = {bank, 9}; // button 5 is used for course/fine frequency tune
 
 void setup() {
   // this is needed for my hardware, where enc1 gets ground signal from pin 15 of arudino 
